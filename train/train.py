@@ -14,8 +14,8 @@ def clean_data(df : pd.DataFrame):
     #suppression des lignes avec valeur manquante
     #remplacer les valeur non numérique 
     df.dropna(inplace=True)
-    df['sex'] = df['sex'].map({'female': 0, 'male': 1})
-    print(df)
+    df['sex'] = df['sex'].map({'female': 1, 'male': 0})
+    
 
     
     return df
@@ -23,7 +23,6 @@ def clean_data(df : pd.DataFrame):
 def train_model(df):
 
     model = KNeighborsClassifier(n_neighbors=3)
-    print("flag",df)
     y = df["survived"]  
     X = df[['pclass', 'sex', 'age']]
     

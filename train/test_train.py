@@ -3,7 +3,7 @@ import pandas as pd
 from train import clean_data
 
 class TestTrain(TestCase):
-    def tes_clean_data(self):
+    def test_clean_data(self):
         df =pd.DataFrame({
             'survived':[1,0,1],
             'pclass':[1,2,3],
@@ -12,5 +12,8 @@ class TestTrain(TestCase):
         })
         result_df=clean_data(df)
 
-        self.assertEqual(result_df.shape[0])
-        self.assertEqual(result_df['sex'][0])
+        self.assertEqual(result_df.shape[0],3)
+        self.assertEqual(result_df['sex'][0],0)
+
+if __name__ == "__main__":
+    TestTrain().test_clean_data()
