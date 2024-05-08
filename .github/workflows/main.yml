@@ -8,10 +8,10 @@ jobs:
 
     steps:
       - name: Checkout repostery
-        uses: action/checkout@v4
+        uses: actions/checkout@v4
 
       - name: Set up Pyhton
-        uses: action/setup-python@v4
+        uses: actions/setup-python@v4
         with:
           pyhton-version: 3.11.1
 
