@@ -36,7 +36,7 @@ def train_model(df):
     return model
 
 if __name__ == "__main__":
-        df =ingest_data("/Users/corciatheo/Documents/GitHub/api-model/train/titanic.xls")
+        df =ingest_data("api-model/train/titanic.xls")
         df = clean_data(df)
         model=train_model(df)
         joblib.dump(model,"model_titanic.joblib")
