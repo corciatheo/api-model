@@ -34,7 +34,7 @@ jobs:
         run: echo "${{ secrets.PASSWORD }}" | docker login -u "${{ secrets.USERNAME }}" --password-stdin
       
       - name: Tag Docker Image
-        run: docker tag api_tianic ${{ secrets.USERNAME }}/api_titanic
+        run: docker tag api_titanic ${{ secrets.USERNAME }}/api_titanic
 
       - name: Push Docker Image
         run : docker push ${{ secrets.USERNAME }}/api_titanic
