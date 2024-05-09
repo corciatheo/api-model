@@ -26,5 +26,14 @@ jobs:
       
       - name: Build Docker image
         run: docker build -t titanic_api .
+      
+      - name: Login to Docker Image
+        run: echo "${{secret.PASSWORD}}" | docker login -u "${{ secret.USERNAME}}" --password-stdin
+      
+      - name: Tag Docker Image
+        run: docker tag api_tianic ${{ secret.USERNAME}}/api_titanic
+
+      - name: Push Docker Image
+        run : docker push ${{secret.USERNAME}}/api_titanic
         
       
