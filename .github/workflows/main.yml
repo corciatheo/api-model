@@ -30,7 +30,7 @@ jobs:
       - name: Build Docker image
         run: docker build -t titanic_api .
       
-      - name: Login to Docker Image
+      - name: Login to Docker hub
         run: echo "${{ secret.PASSWORD }}" | docker login -u "${{ secret.USERNAME }}" --password-stdin
       
       - name: Tag Docker Image
